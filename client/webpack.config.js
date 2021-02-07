@@ -8,6 +8,7 @@ module.exports = {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
   },
+
   plugins: [
     new HTMLWebpackPlugin({
       template: "./src/index.html",
@@ -28,7 +29,11 @@ module.exports = {
     ],
   },
   devServer: {
-    port: 4000,
-    hot: true,
+    port: 8080,
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+      },
+    },
   },
 };
