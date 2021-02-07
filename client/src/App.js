@@ -1,14 +1,10 @@
 import React from "react";
+import RegisterPage from "./pages/register.page";
 
 const App = () => {
   return (
     <div>
-      <section>
-        <header>
-          <h1>Hello from app</h1>
-          <p>This is base react-app</p>
-        </header>
-      </section>
+      <RegisterPage />
     </div>
   );
 };

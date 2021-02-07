@@ -10,11 +10,12 @@ const config = require('config')
 router.post(
     '/register',
     [
-        check('email', 'wrong email').isEmail,
+        check('email', 'wrong email').isEmail(),
         check('password', 'password must be 6 six or greater').isLength({
             min: 6,
         }),
     ],
+
     async (req, res) => {
         try {
             const errors = validationResult(req)
